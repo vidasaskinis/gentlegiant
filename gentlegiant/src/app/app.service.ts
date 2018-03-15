@@ -7,12 +7,12 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AppService {
-    private greetUrl = 'api/Graph';
+    private graphUrl = 'api/Graph';
 
     constructor(private _http: Http) { }
 
     getGraph(): Observable<any> {
-        return this._http.get(this.greetUrl).map((response: Response) => {
+        return this._http.get(this.graphUrl).map((response: Response) => {
             return response.text();
         });
     }
