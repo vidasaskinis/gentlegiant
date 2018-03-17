@@ -13,7 +13,7 @@ export class AppService {
 
     getGraph(): Observable<any> {
         return this._http.get(this.graphUrl).map((response: Response) => {
-            return response.text();
+            return response.json();
         });
     }
 }

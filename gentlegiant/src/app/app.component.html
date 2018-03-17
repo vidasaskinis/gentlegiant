@@ -1,6 +1,6 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ test }}!
-  </h1>
+<div *ngIf="loaded" class="col-md-12">
+  <div style="display: block; width: 75%; height:75%; ">
+    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+      [chartType]="barChartType"></canvas>
+  </div>
 </div>
-

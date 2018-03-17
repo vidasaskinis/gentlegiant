@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -13,7 +13,8 @@ import { AppService } from './app.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    ChartsModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
