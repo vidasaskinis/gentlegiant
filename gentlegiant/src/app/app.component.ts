@@ -1,6 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-// import { Observable } from 'rxjs/Observable';
-// import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
 import 'rxjs/add/operator/takeWhile';
 
@@ -29,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(private _appService: AppService) {
     this.alive = true;
-    this.interval = 5000;
+    this.interval = 6000;
   }
 
   ngOnInit(): void {
@@ -39,7 +37,10 @@ export class AppComponent implements OnInit, OnDestroy {
         this._appService.getGraph()
           .subscribe(
             result => {
-              this.barChartData = [{ data: result['data'], label: 'Stock #1' }];
+              this.barChartData = [{
+                data: result['data'],
+                label: `Stock #1 (refreshes every ${Math.floor(this.interval / 1000)} seconds)`
+              }];
               this.barChartLabels = result['labels'];
               this.loaded = true;
             }

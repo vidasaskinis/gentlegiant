@@ -1,5 +1,7 @@
-<div *ngIf="loaded" class="col-md-12">
-  <div style="display: block; width: 75%; height:75%; ">
+<h2>Welcome to Stock Price Chart</h2>
+
+<div *ngIf="loaded">
+  <div style="display: block;">
     <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
       [chartType]="barChartType"></canvas>
   </div>

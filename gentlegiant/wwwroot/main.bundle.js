@@ -294,7 +294,7 @@ module.exports = ".canvas-container{\r\n    width: 200px;\r\n}"
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"loaded\" class=\"col-md-12\">\r\n  <div style=\"display: block; width: 75%; height:75%; \">\r\n    <canvas baseChart [datasets]=\"barChartData\" [labels]=\"barChartLabels\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\"\r\n      [chartType]=\"barChartType\"></canvas>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<h2>Welcome to Stock Price Chart</h2>\r\n\r\n<div *ngIf=\"loaded\">\r\n  <div style=\"display: block;\">\r\n    <canvas baseChart [datasets]=\"barChartData\" [labels]=\"barChartLabels\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\"\r\n      [chartType]=\"barChartType\"></canvas>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -317,8 +317,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-// import { Observable } from 'rxjs/Observable';
-// import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
 
 
 
@@ -334,7 +332,7 @@ var AppComponent = /** @class */ (function () {
         };
         this.barChartData = [{ data: [] }];
         this.alive = true;
-        this.interval = 2000;
+        this.interval = 6000;
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -343,7 +341,10 @@ var AppComponent = /** @class */ (function () {
             .subscribe(function () {
             return _this._appService.getGraph()
                 .subscribe(function (result) {
-                _this.barChartData = [{ data: result['data'], label: 'Stock #1' }];
+                _this.barChartData = [{
+                        data: result['data'],
+                        label: "Stock #1 (refreshes every " + Math.floor(_this.interval / 1000) + " seconds)"
+                    }];
                 _this.barChartLabels = result['labels'];
                 _this.loaded = true;
             });
