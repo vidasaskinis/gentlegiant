@@ -3,7 +3,7 @@ webpackJsonp(["styles"],{
 /***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css":
 /***/ (function(module, exports) {
 
-module.exports = "body{\r\n    background-color: rgb(217, 235, 255);\r\n}\r\n\r\n.app-container{\r\n    width: 75%;\r\n    height: 75%\r\n}"
+module.exports = "body {\r\n  background-color: rgb(217, 235, 255);\r\n}\r\n\r\nh2 {\r\n    text-align: center;\r\n    font-family: 'Courier New', Courier, monospace;\r\n    font-weight: bold;\r\n}\r\n\r\n.app-container {\r\n  width: 75%;\r\n  height: 75%\r\n}\r\n"
 
 /***/ }),
 

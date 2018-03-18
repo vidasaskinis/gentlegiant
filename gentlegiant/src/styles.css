@@ -1,8 +1,14 @@
-body{
-    background-color: rgb(217, 235, 255);
+body {
+  background-color: rgb(217, 235, 255);
 }
 
-.app-container{
-    width: 75%;
-    height: 75%
+h2 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.app-container {
+  width: 75%;
+  height: 75%
 }
