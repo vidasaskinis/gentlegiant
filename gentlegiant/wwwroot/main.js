@@ -154,6 +154,8 @@ var map = {
 	"./mk.js": "./node_modules/moment/locale/mk.js",
 	"./ml": "./node_modules/moment/locale/ml.js",
 	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
 	"./mr": "./node_modules/moment/locale/mr.js",
 	"./mr.js": "./node_modules/moment/locale/mr.js",
 	"./ms": "./node_modules/moment/locale/ms.js",
@@ -481,10 +483,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var AppService = /** @class */ (function () {
     function AppService(_http) {
         this._http = _http;
-        this.graphUrl = 'api/Graph';
     }
     AppService.prototype.getGraph = function () {
-        return this._http.get(this.graphUrl).map(function (response) {
+        return this._http.get('api/Graph').map(function (response) {
             return response.json();
         });
     };

@@ -16,9 +16,6 @@ import { AppService } from './app.service';
     HttpModule,
     ChartsModule
   ],
-  exports: [
-    AppService
-  ],
   providers: [AppService],
   bootstrap: [AppComponent]
 })

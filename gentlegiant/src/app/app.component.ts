@@ -3,6 +3,7 @@ import { TimerObservable } from 'rxjs/observable/TimerObservable';
 import 'rxjs/add/operator/takeWhile';
 
 import { AppService } from './app.service';
+import { IStockData } from './models/IStockData';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,7 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe(() =>
         this._appService.getGraph()
           .subscribe(
-            result => {
+            (result: IStockData) => {
               this.barChartData = [{
                 data: result['data'],
                 label: `Stock #1 (refreshes every ${Math.floor(this.interval / 1000)} seconds)`

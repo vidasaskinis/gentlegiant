@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { IStockData } from './models/StockData';
+import { IStockData } from './models/IStockData';
 
 @Injectable()
 export class AppService {

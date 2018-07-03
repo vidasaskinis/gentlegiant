@@ -9,10 +9,23 @@ import {
 import { MockBackend } from '@angular/http/testing';
 
 import { AppService } from './app.service';
-import { IStockData } from './models/StockData';
+import { IStockData } from './models/IStockData';
 
 
 describe('AppService', () => {
+
+  const mockResponse = {
+    data: {
+      Labels: [
+        '12:00',
+        '12:10'
+      ],
+      Data: [
+        10,
+        50
+      ]
+    }
+  };
 
   beforeEach(() => {
 
@@ -32,19 +45,6 @@ describe('AppService', () => {
 
   it('should return Observable<IStockData>',
     inject([AppService, XHRBackend], (appService: AppService, mockBackend: MockBackend) => {
-
-      const mockResponse = {
-        data: {
-          Labels: [
-            '12:00',
-            '12:10'
-          ],
-          Data: [
-            10,
-            50
-          ]
-        }
-      };
 
       mockBackend.connections.subscribe((connection: any) => {
         connection.mockRespond(new Response(new ResponseOptions({
