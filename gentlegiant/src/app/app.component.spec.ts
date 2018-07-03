@@ -25,8 +25,7 @@ describe('AppComponent', () => {
   }));
   it('should render title in a h2 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h2').textContent).toContain('Welcome to Stock Price Chart');
+    expect(compiled.querySelector('h2').textContent).toEqual('Welcome to Stock Price Chart');
   }));
 });
